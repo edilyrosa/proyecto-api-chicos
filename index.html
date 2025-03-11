@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD A API</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .loader {
+        width: 48px;
+        height: 48px;
+        border: 5px solid #020202;
+        border-bottom-color: transparent;
+        border-radius: 50%;
+        display: inline-block;
+        box-sizing: border-box;
+        animation: rotation 1s linear infinite;
+        }
+
+    @keyframes rotation {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+    } 
+    </style>
+
+</head>
+<body>
+    <h1 class="text-4xl text-blue-700 font-bold text-center my-4">Formulario - Tabla CRUD de usuarios con Json-Server</h1>
+    
+    <div class="block w-full overflow-x-auto border">
+        <table class="items-center w-full bg-transparent border-collapse">
+            <thead>
+                <tr>
+                    <th
+                        class="px-4 bg-gray-50 text-gray-700 align-middle py-3 text-xs font-semibold text-left uppercase border-l-0 border-r-0 whitespace-nowrap">
+                       Foto</th>
+                    <th
+                        class="px-4 bg-gray-50 text-gray-700 align-middle py-3 text-xs font-semibold text-left uppercase border-l-0 border-r-0 whitespace-nowrap">
+                        Nombre</th>
+                    <th
+                        class="px-4 bg-gray-50 text-gray-700 align-middle py-3 text-xs font-semibold text-left uppercase border-l-0 border-r-0 whitespace-nowrap">
+                        Edad</th>
+                    <th
+                        class="px-4 bg-gray-50 text-gray-700 align-middle py-3 text-xs font-semibold text-left uppercase border-l-0 border-r-0 whitespace-nowrap">
+                        Genero </th>
+                    <th
+                        class="px-4 bg-gray-50 text-gray-700 align-middle py-3 text-xs font-semibold text-left uppercase border-l-0 border-r-0 whitespace-nowrap">
+                        Email </th>
+                    <th
+                        class="px-4 bg-gray-50 text-gray-700 align-middle py-3 text-xs font-semibold text-left uppercase border-l-0 border-r-0 whitespace-nowrap">
+                        Aceptacion % </th>
+                   
+                    <th
+                        class="px-4 bg-gray-50 text-gray-700 align-middle py-3 text-xs font-semibold text-left uppercase border-l-0 border-r-0 whitespace-nowrap">
+                        Acciones </th>
+                   
+                </tr>
+            </thead>
+            
+            <tbody class="divide-y divide-gray-100" id="tBody">
+                        <!-- llenado dinamico -->
+                <tr class="text-gray-500">
+                <td colspan="7">
+                    <span class="loader"></span></td>
+                </tr>
+                
+            </tbody>
+
+
+        </table>
+    </div>
+    
+    <script src="./script.js"></script>
+</body>
+</html>

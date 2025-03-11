@@ -1,0 +1,67 @@
+{
+    "usuarios": [
+      {
+        "nombre": "Carlos Pérez",
+        "edad": 33,
+        "email": "carlossspqqmora@email.com",
+        "foto": "https://randomuser.me/api/portraits/men/1.jpg",
+        "aceptacion": 91,
+        "genero": false,
+        "id": "1"
+      },
+      {
+        "nombre": "Ana García M",
+        "edad": 35,
+        "email": "ana@email.com",
+        "foto": "https://randomuser.me/api/portraits/women/2.jpg",
+        "aceptacion": 50,
+        "genero": true,
+        "id": "2"
+      },
+      {
+        "id": "d89a",
+        "nombre": "Juan Marin",
+        "edad": 30,
+        "email": "jj@gmail.com",
+        "foto": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDPis7Y5eZQsqDBvDKLt4VlgedwLN_-RENXg&s",
+        "aceptacion": 65,
+        "genero": false
+      },
+      {
+        "nombre": "Ana García Mora",
+        "edad": 34,
+        "email": "ana@email.com",
+        "foto": "https://randomuser.me/api/portraits/women/2.jpg",
+        "aceptacion": 5,
+        "genero": true,
+        "id": "cc2"
+      },
+      {
+        "nombre": "Juan Marin",
+        "edad": 35,
+        "email": "jjm@gmail.com",
+        "foto": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDPis7Y5eZQsqDBvDKLt4VlgedwLN_-RENXg&s",
+        "aceptacion": 70,
+        "genero": false,
+        "id": "d89a23"
+      },
+      {
+        "nombre": "Rosita Moraas",
+        "edad": 200,
+        "email": "edilymor@gmail.com",
+        "foto": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQn9zilY2Yu2hc19pDZFxgWDTUDy5DId7ITqA&s",
+        "aceptacion": 10,
+        "genero": true,
+        "id": "5fa6"
+      },
+      {
+        "nombre": "Carlota",
+        "edad": 44,
+        "email": "edilymor@gmail.com",
+        "foto": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQn9zilY2Yu2hc19pDZFxgWDTUDy5DId7ITqA&s",
+        "aceptacion": 45,
+        "genero": true,
+        "id": "74d3"
+      }
+    ]
+  }
