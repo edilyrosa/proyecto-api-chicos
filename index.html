@@ -1,85 +1,162 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CRUD A API</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        .loader {
-        width: 48px;
-        height: 48px;
-        border: 5px solid #020202;
-        border-bottom-color: transparent;
-        border-radius: 50%;
-        display: inline-block;
-        box-sizing: border-box;
-        animation: rotation 1s linear infinite;
-        }
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>CRUD A API</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <style>
+            .loader {
+            width: 48px;
+            height: 48px;
+            border: 5px solid #020202;
+            border-bottom-color: transparent;
+            border-radius: 50%;
+            display: inline-block;
+            box-sizing: border-box;
+            animation: rotation 1s linear infinite;
+            }
 
-    @keyframes rotation {
-    0% {
-        transform: rotate(0deg);
-    }
-    100% {
-        transform: rotate(360deg);
-    }
-    } 
-    </style>
+        @keyframes rotation {
+        0% {
+            transform: rotate(0deg);
+        }
+        100% {
+            transform: rotate(360deg);
+        }
+        } 
+        </style>
 
 </head>
 <body>
     <h1 class="text-4xl text-blue-700 font-bold text-center my-4">Formulario - Tabla CRUD de usuarios con Json-Server</h1>
-    
-<!--TODO: HAGAN EL FORMULARIO -->
-        <!--? https://tailwindflex.com/@lukas-muller/contact-us-page-template -->
-
-
- <!--! TABLA -->
-         <!--? https://tailwindflex.com/@sophia-baker/table-with-progress-column -->
-    <div class="block w-full overflow-x-auto border">
-        <table class="items-center w-full bg-transparent border-collapse">
-            <thead>
-                <tr>
-                    <th
-                        class="px-4 bg-gray-50 text-gray-700 align-middle py-3 text-xs font-semibold text-left uppercase border-l-0 border-r-0 whitespace-nowrap">
-                       Foto</th>
-                    <th
-                        class="px-4 bg-gray-50 text-gray-700 align-middle py-3 text-xs font-semibold text-left uppercase border-l-0 border-r-0 whitespace-nowrap">
-                        Nombre</th>
-                    <th
-                        class="px-4 bg-gray-50 text-gray-700 align-middle py-3 text-xs font-semibold text-left uppercase border-l-0 border-r-0 whitespace-nowrap">
-                        Edad</th>
-                    <th
-                        class="px-4 bg-gray-50 text-gray-700 align-middle py-3 text-xs font-semibold text-left uppercase border-l-0 border-r-0 whitespace-nowrap">
-                        Genero </th>
-                    <th
-                        class="px-4 bg-gray-50 text-gray-700 align-middle py-3 text-xs font-semibold text-left uppercase border-l-0 border-r-0 whitespace-nowrap">
-                        Email </th>
-                    <th
-                        class="px-4 bg-gray-50 text-gray-700 align-middle py-3 text-xs font-semibold text-left uppercase border-l-0 border-r-0 whitespace-nowrap">
-                        Aceptacion % </th>
-                   
-                    <th
-                        class="px-4 bg-gray-50 text-gray-700 align-middle py-3 text-xs font-semibold text-left uppercase border-l-0 border-r-0 whitespace-nowrap">
-                        Acciones </th>
-                   
-                </tr>
-            </thead>
+        <main class="flex gap-8 flex-col xl:flex-row justify-center items-center xl:justify-center xl: items-center"
+            <!--! FORMULARIO -->
+            <!--? https://tailwindflex.com/@lukas-muller/contact-us-page-template -->
+            <!--TODO: quitar todo, solo queda: min-h-screen flex flex-col -->
+            <div class="min-h-screen flex flex-col 
+                        max-w-[95%] justify-center xl:sticky xl:top-0 xl:max-w-[35%]">
+                <!--?igual -->
+                <div class="relative py-3 sm:max-w-xl sm:mx-auto">
+                    <!--?quedan iguales... -->
+                    <div class="absolute inset-0 bg-gradient-to-r from-indigo-700 to-purple-500 shadow-lg transform -skew-y-6 sm:skew-y-0 sm:-rotate-6 sm:rounded-3xl"> </div>
+                    <div class="text-white relative px-4 py-10 bg-indigo-400 shadow-lg sm:rounded-3xl sm:p-20">
+                        <div class="text-center pb-6">
+                            <!--TODO: Cambiar titlulo a: FORMULARIO DE USUARIO!  -->
+                            <h1 class="text-3xl">FORMULARIO DE USUARIO!</h1>
+                            <!--TODO: add a la class -> text-white font-bold , id="title, y Cambiar titlulo: LLENA LOS CAMPOS Y CREA UN USUARIO.-->
+                            <p class="text-gray-300 m-2 text-white font-bold" id="title"> LLENA LOS CAMPOS Y CREA UN USUARIO.</p>
+                        </div>
             
-            <tbody class="divide-y divide-gray-100" id="tBody">
-                        <!-- llenado dinamico -->
-                <tr class="text-gray-500">
-                <td colspan="7">
-                    <span class="loader"></span></td>
-                </tr>
-                
-            </tbody>
+                        <!--TODO: darle id al form y a cada input. Agregar: edad, aceptacion, foto. Crear div del radio de genero, quitar textArea -->
+                        <form id="form">
+                        <!-- TODO: AGREGAR ESTE INPUT HIDDEN -->
+                            <input type="hidden" id="userId"> <!--! Campo oculto para guardar el id del usuarios a editar (ENVIANDO SU INFO AL FORM) -->
+                            <!-- TODO: tomar solo 1 input y de del sacar: nombre, edad, aceptacion, email, URL. AGREGARLES id -->
+                            <input
+                                    class="shadow mb-4 appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                                    type="text" placeholder="Nombre" name="nombre" id="nombre">
+            
+                            <input
+                                    class="shadow mb-4 appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                                    type="number" placeholder="Edad" name="edad" id="edad">
+
+                            <input
+                                    class="shadow mb-4 appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                                    type="number" id="aceptacion" placeholder="Indica porcentaje de aceptación de 1 a 100" name="aceptacion">
+                                    
+                            <input
+                                    class="shadow mb-4 appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                                    type="email" placeholder="Email" name="email" id="email">
+            
+                            <input
+                                    class="shadow mb-4 appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                                    type="text" placeholder=" URL de tu foto" name="foto" id="foto">
+            
+                            <!--TODO: ESTE ES EL RADIO, CREARLO TODO -->
+                            <!--? SON 2 inputs type=radio QUE TIENEN EL MISMO name="genero", sera nuestro selector para capturar su valor -->
+                            <div class="p-4">
+                                <label class="block text-lg font-medium mb-2">¿Cuál es tu género?</label>
+                                    <div class="flex items-center mb-4">
+                                        <input type="radio" id="mujer" name="genero" value="true" class="mr-2">
+                                        <label for="mujer" class="text-md">Mujer</label>
+                                    </div>
+                                    <div class="flex items-center">
+                                        <input type="radio" id="hombre" name="genero" value="false" class="mr-2">
+                                        <label for="hombre" class="text-md">Hombre</label>
+                                    </div>
+                            </div>
+
+                            <div class="flex justify-between">
+                                <!-- TODO: agregar id y cambiar value en espanol. Class y type IGUAL  -->
+                                <input
+                                    type="submit" id="btnSubmit" 
+                                    class="shadow bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                                    value="Enviar ➤">
+                                <input
+                                    type="reset" id="reset" 
+                                    class="shadow bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                                    value="Limpiar">
+                            </div>
+            
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!--! TABLA -->
+            <!--? https://tailwindflex.com/@sophia-baker/table-with-progress-column -->
+            <!-- TODO: Abrir la tabla y hacer 2 mejoras   -->
+            <!--TODO: ADD esto a la <div: px-6 xl:px-4 max-w-[98%] xl:max-w-[55%] text-xs"> -->
+            <div class="block w-full overflow-x-auto border px-6 xl:px-4 max-w-[98%] xl:max-w-[55%] text-xs">
+                <!-- TODO: ADD a la table: style="overflow:hidden" -->
+                <table style="overflow:hidden" class="items-center w-full bg-transparent border-collapse">
+                    <thead>
+                        <!-- TODO: add al tr class="text-center" -->
+                        <tr class="text-center">
+                            <th
+                                class="px-4 bg-gray-50 text-gray-700 align-middle py-3 text-xs font-semibold  uppercase border-l-0 border-r-0 whitespace-nowrap">
+                            Foto</th>
+                            <th
+                                class="px-4 bg-gray-50 text-gray-700 align-middle py-3 text-xs font-semibold  uppercase border-l-0 border-r-0 whitespace-nowrap">
+                                Nombre</th>
+                            <th
+                                class="px-4 bg-gray-50 text-gray-700 align-middle py-3 text-xs font-semibold  uppercase border-l-0 border-r-0 whitespace-nowrap">
+                                Edad</th>
+                            <th
+                                class="px-4 bg-gray-50 text-gray-700 align-middle py-3 text-xs font-semibold  uppercase border-l-0 border-r-0 whitespace-nowrap">
+                                Genero </th>
+                            <th
+                                class="px-4 bg-gray-50 text-gray-700 align-middle py-3 text-xs font-semibold  uppercase border-l-0 border-r-0 whitespace-nowrap">
+                                Email </th>
+                            <th
+                                class="px-4 bg-gray-50 text-gray-700 align-middle py-3 text-xs font-semibold  uppercase border-l-0 border-r-0 whitespace-nowrap">
+                                Aceptacion % </th>
+                        
+                            <th
+                                class="px-4 bg-gray-50 text-gray-700 align-middle py-3 text-xs font-semibold uppercase border-l-0 border-r-0 whitespace-nowrap">
+                                Acciones </th>
+                        
+                        </tr>
+                    </thead>
+                    
+                    <tbody class="divide-y divide-gray-100" id="tBody">
+                                <!-- llenado dinamico -->
+                        <tr class="text-gray-500">
+                            <!-- TODO: Add al td, class="text-center my-4" -->
+                            <td colspan="7" class="text-center my-4">
+                                <!--! https://cssloaders.github.io/ -->
+                                <span class="loader"></span>
+                            </td>
+                        </tr>
+                        
+                    </tbody>
 
 
-        </table>
-    </div>
-    
+                </table>
+            </div>
+
+        </main>
     <script src="./script.js"></script>
 </body>
 </html>
